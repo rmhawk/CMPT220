@@ -8,7 +8,7 @@
 import java.util.*;
 import java.text.*;
 
-public class Prog2Hawkinson
+public class Prog2Hawkinsonagain
 {
      public static void main (String args[])
      {
@@ -219,14 +219,4 @@ public class Prog2Hawkinson
           System.out.println("The customer's service charge is "+moneystyle.format(servicCharg));
           System.out.println("The customer's total is " +moneystyle.format(totdue));
      }//outputResults
-}//Prog2Hawkinson
-                             
-                                                                        
-                                                                                                                                 
-                                                                        
-     
-     
-          
-          
-               
-          
+}//Prog2Hawkinsonagain

@@ -1,0 +1,40 @@
+/*Rebecca Hawkinson
+ * 
+ */
+public class Rectangle
+{
+     private int myWIdth;
+     private int myHeight;
+     private char myFillStyle;
+}
+
+public Rectangle()
+{
+     myWIdth=10;
+     myHeight=5;
+     myFillStyle='*';
+}
+
+public Rectangle(int newWidth, int newHeight, char newFillStyle)
+{
+     myWidth=newWidth;
+     myHeight=newHeight;
+     myFillStyle=newFillSyle;
+}
+
+public void setWIdth(int newWidth)
+{ myWidth=newWidth; }
+public int getWidth()
+{ return myWidth; }
+
+public void setHeight(int newHeight)
+{ myHeight=newHeight; }
+public int getHeight()
+{ return myHeight; }
+
+public void setFillStyle(char newFillStyle)
+{ myFillStyle=newFillStyle; }
+public char getFillStyle()
+{ return myFillStyle; }
+
+}//Rectangle

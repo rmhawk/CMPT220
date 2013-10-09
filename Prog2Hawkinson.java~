@@ -28,8 +28,8 @@ public class Prog2Hawkinson
           movieTotal=0.00;
           serviceCharge=0.00;
           totalDue=0.00;
-          highestCharge=Double.MIN_VALUE;
-          lowestCharge=Double.MAX_VALUE;
+          highestCharge=0.00;
+          lowestCharge=1000.00;
           total=0.00;
           average=0.00;
           //initializes numerical values
@@ -37,20 +37,23 @@ public class Prog2Hawkinson
           DecimalFormat moneystyle=new
                DecimalFormat ("$0.00");//makes output be in proper monetary format
           
-          System.out.println("Please enter customer's name: ");
+          while(custid!=0)//loops through to allow for multiple customer input
+          {
+               System.out.println("Please enter customer's name: ");//cannot have space right now
                custname=keyboard.next();
                //asks and takes input of customer's name
                
-               do//done before while loop so if id is 0 the loop is skipped
+               do
                {
-                    System.out.println("Please enter the customer's ID (between 25000 and 99999, inclusive), terminate program by entering 0: ");
+                    System.out.println("Please enter the customer's ID (between 25000 and 99999, inclusive), termate program by entering 0: ");
                     custid=keyboard.nextInt();
+                    if (custid==0)
+                         break;
                }//do
-               while (!((custid>=25000)&&(custid<100000)||(custid==0)));
+               while (!((custid>=25000)&&(custid<100000)));
                //asks and takes input of customer's id.  Validates it is between 25000-99999, inclusive.
-               
-          while(custid!=0)//loops through to allow for multiple customer input
-          {
+               if (custid==0)
+                    break;
                do
                {
                     System.out.println("Please enter the amount of movies ordered: ");
@@ -60,9 +63,7 @@ public class Prog2Hawkinson
                //asks and takes input of amount of movie's ordered, valedates that it is a positive interger.
                
                movieTotal=chooseMovie(numbMovies);//uses the mothod chooseMovie to calculate movies total cost
-               
                serviceCharge=calcServiceCharge(numbMovies, movieTotal);//uses the method to calculate the service charge
-               
                totalDue=calcTotalDue(movieTotal, serviceCharge);//uses the method to calculate the total
                
                outputResults(custname, custid, numbMovies, movieTotal, serviceCharge, totalDue);//uses the method to output information
@@ -81,27 +82,15 @@ public class Prog2Hawkinson
                }
                
                total=totalDue+total;//keeps track of how much totla is charged for all customers
-               
-               System.out.println("Please enter customer's name: ");
-               custname=keyboard.next();
-               
-               do//done at end of while loop so if id is 0 the loop is ended
-               {
-                    System.out.println("Please enter the customer's ID (between 25000 and 99999, inclusive), terminate program by entering 0: ");
-                    custid=keyboard.nextInt();
-               }//do
-               while (!((custid>=25000)&&(custid<100000)||(custid==0)));
           }//while
-          
           average=total/customers;//finds average cost per customer
-          //if customer's==0 then this will return a ?
           
           System.out.println("The number of customers processed was "+customers);//prints out summary output
           System.out.println("The highest amount charged was "+moneystyle.format(highestCharge));
           System.out.println("The customer ID of the higest amount charged was "+highid);
           System.out.println("The lowest amount charged was "+moneystyle.format(lowestCharge));
           System.out.println("The customer ID of the lowest amount charged was "+lowid);
-          System.out.println("The total amount of all downloads purchased was "+moneystyle.format(total));
+          System.out.println("The total amount of all downloads purchased was "+moneystyle.format(total));//should this be the number of movies or the total cost?
           System.out.println("The average of all purchase amounts was "+moneystyle.format(average));
      }//main
      
