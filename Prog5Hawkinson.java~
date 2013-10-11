@@ -1,0 +1,28 @@
+public class Prog5Hawkinson
+{
+     //static kb=new Scanner(in);
+     
+     public static void main(String args[])
+     {
+          String fake=" ";
+          char choice=' ';
+          
+          do
+          {
+               System.out.println("Please select one of these options");
+               System.out.println("     A - Add a Song to the CD");
+               System.out.println("     L - Find the Sont with the Longest runtime");
+               System.out.println("     S - Find the Song with the shortest runtime");
+               System.out.println("     N - Find the nember of Songs on the CD");
+               System.out.println("     R - Find the total reamining time of the CD");
+               System.out.println("     P - Print out the details about all Songs on the CD");
+               System.out.println("     D - Delete the Longest Song from the CD");
+               System.out.println("     Q - Quit");
+               fake=kb.next();
+               choice=fake.charAt(0);
+          }//do
+          while(!((choice=='A')||(choice=='a')||(choice=='L')||(choice=='l')||(choice=='S')||(choice=='s')
+                       ||(choice=='N')||(choice=='n')||(choice=='R')||(choice=='r')||(choice=='P')||(choice=='p')
+                       ||(choice=='D')||(choice=='d')||(choice=='Q')||(choice=='q')));
+     }//main
+}//Prog5Hawkinson
